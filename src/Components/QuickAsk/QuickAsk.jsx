@@ -69,7 +69,7 @@ function QuickAsk({ selectedText, setHistory }) {
     <Flex gap="md" direction="column" wrap="nowrap">
       <Flex height="100%" gap="md" justify="flex-start" align="center" direction="row" wrap="wrap">
         {quickAskAction.map(({ key, label }) => (
-          <Button key={key} onClick={() => setSelectedAction(key)}>
+          <Button key={key} onClick={() => setSelectedAction(key)} color="green">
             {label}
           </Button>
         ))}

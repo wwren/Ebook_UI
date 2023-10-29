@@ -22,9 +22,6 @@ function App() {
     setSelectedText(selection);
   };
 
-  console.log('selectedText', selectedText);
-  console.log('content', content);
-
   return (
     <SimpleGrid cols={2} spacing="sm" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
       <Grid gutter="sm">
