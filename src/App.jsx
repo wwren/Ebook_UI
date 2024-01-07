@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider, Button } from '@mantine/core';
 
 import ConversationHistory from './Components/ConversationHistory/ConversationHistory';
 
@@ -16,6 +16,11 @@ function App() {
     setSelectedText(selection);
   };
 
+  const handleButtonClick = async () => {
+    const response = await (await fetch('/api/httptrigger1')).json();
+    console.log('response', response);
+  };
+
   return (
     <MantineProvider
       theme={{
@@ -26,6 +31,7 @@ function App() {
     >
       <InteractionModal history={history} setHistory={setHistory} />
       <ConversationHistory history={history} />
+      <Button onClick={handleButtonClick}>Button to click on</Button>
     </MantineProvider>
   );
 }
